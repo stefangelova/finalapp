@@ -1,0 +1,29 @@
+
+<body>
+
+
+
+	<div class = "navbar">
+
+		{% if current_user.is_authenticated %}
+      		<a href="/logout">Logout</a>
+    		{% else %}
+      		<a href="{{ url_for( 'login' ) }}">Login </a>
+		<a href="{{ url_for('register')}}">Register</a>
+    		{% endif %}
+
+		<a href="{{ url_for('home') }}">Home</a>
+		<a href="{{ url_for('about') }}">About</a>
+		<a href="{{ url_for('post')}}">Post</a>
+	</div>
+
+
+
+
+
+</body>
+{% block body_content %}{% endblock %}
+
+
+
+{% block navbar %}{% endblock navbar %}
